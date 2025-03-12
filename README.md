@@ -8,11 +8,11 @@ Each ODE function is a way to solve differential equations. However, ODE15s and 
 The plot shows the system shifting towards the top away from the desired gimbal lock number which is pi/2. In the ode45 system the system is able to hit pi/2 and gimbal lock is detected however ode15s doesnt allow that. As stated before this is due to the way the differential equations are solved. Due to the function reducing the step size to a very small value the ambiguity is skipped over and the plot above shows that.  
 ## How to Use the MATLAB Code
 ### Intial Values and What to Change 
--y0=[0.01,0.01,0.01,0.01,0.01,0.01]; For Euler Angles
--y0q=[1,0.01,0.01,0.01,0.01,0.01,0.01]; For Quaternions
--tspan=[0,2000];
--y0r=[1,0.01,0.01,0.01,0.01,0.01,0.01]; Rodrigues Parameters
--tspanr=[0,26];
+  *y0=[0.01,0.01,0.01,0.01,0.01,0.01]; For Euler Angles
+  *y0q=[1,0.01,0.01,0.01,0.01,0.01,0.01]; For Quaternions
+  *tspan=[0,2000];
+  *y0r=[1,0.01,0.01,0.01,0.01,0.01,0.01]; Rodrigues Parameters
+  *tspanr=[0,26];
 The first 3 is the vector for euler angles and the first 4 is for the quaternions and rodrigues which is the scalar first and then the vector. The last 3 numbers for all are the angular velocites. wx,wy,wz or omega 1,omega 2, omega 3. 
 These five variables are the variables to be changed within the code. However, the ambiguity and singularity are already set into place and the plots produced in the code are with the singularies. The above values are the intial conditions however in the code the variables change to the following:
 -y0=[0.01,0.01,0.01,0.01,0.07,0.01]; For Euler Angles
