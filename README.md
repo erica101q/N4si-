@@ -1,7 +1,7 @@
 # N4si-Analytical Dynamics AE 544 Project
 ## Different Representations Analyzed
 In this project, the representation of Euler angles, quaternions, and classical Rodrigues parameters was explored. The major problem with using Euler angles to analyze a system's rotation is gimbal lock. Gimbal lock occurs when the system loses a degree of freedom, which can cause confusion. An ambiguity with quaternions is a negative sign change in the plots over time, but when the quaternion changes from positive to negative, it does not affect the attitude or angular velocity. Classical Rodrigues parameters have an ambiguity when phi in the scalar part of the equations is 180 degrees. When the system reaches this 180 degrees, it leads to inaccuracies and instability within the system. Each representation can show how a system behaves, but each system has its own faults. In the plots generated for Euler angles from the code, gimbal lock is detected when theta reaches or is close to pi/2. The plots also show the quaternion ambiguity with the negative sign flip. The classical Rodrigues parameters' ambiguity is seen in the plots when Bo in the plot is equal to zero utilizing the phi angle of 180 degrees. This is showed in the plots when the code is run to completion. 
-|![Quat_Final_Plot](https://github.com/user-attachments/assets/849b70fd-41b3-494c-8911-23b2999aa0b2)|![Rod_Plot_Final](https://github.com/user-attachments/assets/d48ca112-9b77-4fb2-bb0a-59272c3c9658)|
+![Quat_Final_Plot](https://github.com/user-attachments/assets/849b70fd-41b3-494c-8911-23b2999aa0b2)![Rod_Plot_Final](https://github.com/user-attachments/assets/d48ca112-9b77-4fb2-bb0a-59272c3c9658)
 
 
 
