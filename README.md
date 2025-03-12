@@ -53,6 +53,6 @@ MATLAB 2024a, ode45 tool,ode15s tool ,ode23s tool,
 In the code, AI was used to help detect when the pitch angle reached π/2. This can be proven by looking at the graphs and observing when the second graph reached near 1.5 on the y-axis. AI was used to assist in making the animation logically correct. There were many errors within the animation, and detecting gimbal lock was another huge challenge that AI helped fix. The goal was to see when the marker showed up on the display, indicating that at least two lines had become aligned with each other, which would represent the gimbal lock problem.
 
 Refrences:
- [1] Schaub, H., & Junkins, J. L. (2009). Analytical mechanics of space systems (2nd edition.). American Institute of Aeronautics and Astronautics.
- [2] Curtis, H. D. (2021). Orbital Mechanics for Engineering Students (Fourth edition.). Butterworth-Heinemann.
+ * [1] Schaub, H., & Junkins, J. L. (2009). Analytical mechanics of space systems (2nd edition.). American Institute of Aeronautics and Astronautics.
+ * [2] Curtis, H. D. (2021). Orbital Mechanics for Engineering Students (Fourth edition.). Butterworth-Heinemann.
 
