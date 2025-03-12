@@ -27,4 +27,4 @@ Furthermore changing these variables will change the plots and detections of gim
 ### Why change the wy value in the code?
 In the assignment a hint was given to change the angular velocities. The angular velocitiy was changed until an ambiguity or singularity was displayed then that change was kept with all 3 representations. 
 ### What needs to be installed
-MATLAB 2024a, ode45 tool,ode15s tool ,ode23 tool,
+MATLAB 2024a, ode45 tool,ode15s tool ,ode23s tool,
