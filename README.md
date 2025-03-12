@@ -12,6 +12,8 @@ Another detection method with quaternions was converting them into another repre
 <img width="1009" alt="Screen Shot 2025-03-12 at 2 01 42 PM" src="https://github.com/user-attachments/assets/934e31cb-7191-49f5-bf71-19ca5ddd6451" />
 The next matrix is for classical Rodrigues Parameters. The book: Analytical Mechanics of Space Systems 2nd editon uses 'q' for Rodrigues Parameters. The following equations gives the kinematic differential equation for this particular representation
 <img width="1008" alt="Screen Shot 2025-03-12 at 2 02 39 PM" src="https://github.com/user-attachments/assets/48343595-c3da-4e80-9df9-d17a3c3f1a37" />
+For the angular velocity differential equations another book was used which can be found in the refrence [2]
+<img width="227" alt="Screen Shot 2025-03-12 at 2 44 17 PM" src="https://github.com/user-attachments/assets/0c38c03a-b65c-4896-87cc-784f35b9dcf8" />
 
 ## ODE 45, ODE 15, and ODE 23 Comparison
 Each ODE function is a way to solve differential equations. However, ODE15s and ODE23s are for stiffer systems that can work well with nonlinear equations. What stiff ODE functions can do is smooth over the system, causing gimbal lock not to be detected, as seen in the code of euler angles. In the code, specifically for classical Rodrigues parameters, ODE23s was needed to solve for the differential equation because the Rodrigues parameters involved more complex and nonlinear equations. A major problem that arose when using ODE45 for classical Rodrigues parameters is that it didn't run for the entire time span selected, so a smaller time step was needed, and a different ODE function had to be used. Furthermore, a small change occurred when changing from ODE45 to ODE23s, as the system was able to extend for a second. However, because it was a small change, ODE45 and ODE15 were explored using the Euler angles. Moreover,if the time is put into increments the system can last up until the desired time of 200 seconds. This can be seen by changing the the following to: tspan=[0,10] then run the code, then change it again to tspan=[10,20]. Continue to run until 200 seconds. Furthermore, allowing the system to run without increments leads to failure with the ode45 function which is why another function was needed. However, all the systems worked when the time was reduced but ode23s was used because it was able to run for a second longer. However, as stated before the ode functions were more explored with the euler angles rather than the classical Rodrigues Parameters. The plot below shows the two functions in the Euler angles representation.
@@ -45,5 +47,10 @@ Furthermore changing these variables will change the plots and detections of gim
 In the assignment a hint was given to change the angular velocities. The angular velocitiy was changed until an ambiguity or singularity was displayed then that change was kept with all 3 representations. 
 ### What needs to be installed
 MATLAB 2024a, ode45 tool,ode15s tool ,ode23s tool,
-## The use of AI
+## Refrences and The use of AI
 In the code, AI was used to help detect when the pitch angle reached π/2. This can be proven by looking at the graphs and observing when the second graph reached near 1.5 on the y-axis. AI was used to assist in making the animation logically correct. There were many errors within the animation, and detecting gimbal lock was another huge challenge that AI helped fix. The goal was to see when the marker showed up on the display, indicating that at least two lines had become aligned with each other, which would represent the gimbal lock problem.
+
+Refrences:
+ [1] Schaub, H., & Junkins, J. L. (2009). Analytical mechanics of space systems (2nd edition.). American Institute of Aeronautics and Astronautics.
+ [2] Curtis, H. D. (2021). Orbital Mechanics for Engineering Students (Fourth edition.). Butterworth-Heinemann.
+
