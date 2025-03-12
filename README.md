@@ -1,13 +1,9 @@
 # N4si-Analytical Dynamics AE 544 Project
+## Intial Plot
+The intial plots are found in the zip file.
 ## Different Representations Analyzed
 In this project, the representation of Euler angles, quaternions, and classical Rodrigues parameters was explored. The major problem with using Euler angles to analyze a system's rotation is gimbal lock. Gimbal lock occurs when the system loses a degree of freedom, which can cause confusion. An ambiguity with quaternions is a negative sign change in the plots over time, but when the quaternion changes from positive to negative, it does not affect the attitude or angular velocity. Classical Rodrigues parameters have an ambiguity when phi in the scalar part of the equations is 180 degrees. When the system reaches this 180 degrees, it leads to inaccuracies and instability within the system. Each representation can show how a system behaves, but each system has its own faults. In the plots generated for Euler angles from the code, gimbal lock is detected when theta reaches or is close to pi/2. The plots also show the quaternion ambiguity with the negative sign flip. The classical Rodrigues parameters' ambiguity is seen in the plots when Bo in the plot is equal to zero utilizing the phi angle of 180 degrees. This is showed in the plots when the code is run to completion. 
 ![Quat_Final_Plot](https://github.com/user-attachments/assets/849b70fd-41b3-494c-8911-23b2999aa0b2)![Rod_Plot_Final](https://github.com/user-attachments/assets/d48ca112-9b77-4fb2-bb0a-59272c3c9658)
-
-
-
-
-
-
 ## ODE 45, ODE 15, and ODE 23 Comparison
 Each ODE function is a way to solve differential equations. However, ODE15s and ODE23s are for stiffer systems that have nonlinear equations. What the stiff ODE function can do is smooth over the system, causing gimbal lock not to be detected, as seen in the code. In the code, specifically for classical Rodrigues parameters, ODE23s was needed to solve the differential equation because the Rodrigues parameters involve more complex and nonlinear equations. A major problem that arose when using ODE45 for classical parameters is that it didn't run for the entire time span selected, so a smaller time step was needed, and a different ODE function had to be used. A small change occurred when changing from ODE45 to ODE23s, as the system was able to extend for a second. However, because it was a small change, ODE45 and ODE15 were explored using the Euler angles. Furthermore,if the time is put into increments the system can last up until the desired time such as tspan[0,10],tspan[10,20]. As stated before, the function smooths over the system and gimbal lock is not detected. The plot below shows the two functions in the Euler angles representation.
 ![Euler_ANgles_Final_Plots](https://github.com/user-attachments/assets/2735dcf9-1860-4ce5-985b-00f65d4e8161)
