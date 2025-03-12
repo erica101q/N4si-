@@ -13,13 +13,16 @@ The plot shows the system shifting towards the top away from the desired gimbal 
 * tspan=[0,2000];
 * y0r=[1,0.01,0.01,0.01,0.01,0.01,0.01]; Rodrigues Parameters
 * tspanr=[0,26];
+
 The first 3 is the vector for euler angles and the first 4 is for the quaternions and rodrigues which is the scalar first and then the vector. The last 3 numbers for all are the angular velocites. wx,wy,wz or omega 1,omega 2, omega 3. 
 These five variables are the variables to be changed within the code. However, the ambiguity and singularity are already set into place and the plots produced in the code are with the singularies. The above values are the intial conditions however in the code the variables change to the following:
+
 * y0=[0.01,0.01,0.01,0.01,0.07,0.01]; For Euler Angles
 * y0q=[1,0.01,0.01,0.01,0.01,0.07,0.01]; For Quaternions
 * tspan=[0,2000];
 * y0r=[1,0.01,0.01,0.01,0.01,0.07,0.01]; Rodrigues Parameters
 * tspanr=[0,26];
+
 Furthermore changing these variables will change the plots and detections of gimbal lock and the 180 degree error.
 ### Why change the wy value in the code?
 In the assignment a hint was given to change the angular velocities. The angular velocitiy was changed until an ambiguity or singularity was displayed then that change was kept with all 3 representations. 
